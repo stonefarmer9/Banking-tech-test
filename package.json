@@ -1,0 +1,15 @@
+{
+  "name": "banking_tech_test",
+  "version": "1.0.0",
+  "description": "First tech test - a small banking REPL app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "jest": "^24.1.0"
+  }
+}

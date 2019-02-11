@@ -1,11 +1,10 @@
-const foo = require('../scripts/main.js')
+const Account = require('../scripts/main.js')
 
-beforeEach(() => {
-  const myAccount = new Account
-})
 
 describe('Account', ()=> {
+
   test('#Deposit increases the account balance', ()=>{
+    const myAccount = new Account
     myAccount.deposit(100)
     expect(myAccount.balance).toBe(100)
   })

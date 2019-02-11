@@ -1,5 +1,12 @@
-function foo () {
-	return "bar";
+class Account {
+  constructor () {
+    this.balance = 0
+  }
+
+  deposit(amount) {
+    this.balance += amount
+  }
+
 }
 
-module.exports = foo;
+module.exports = Account;

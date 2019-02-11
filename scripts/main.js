@@ -12,7 +12,8 @@ class Account {
 
 	withdraw(amount){
 		this.balance -= amount;
-		this.log.push( ["withdrawal", amount])
+		const date = this._getDate();
+		this.log.push( ["withdrawal", amount, date])
 
 	}
 

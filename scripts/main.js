@@ -11,6 +11,8 @@ class Account {
 
 	withdraw(amount){
 		this.balance -= amount;
+		this.log.push( ["withdrawal", amount])
+
 	}
 
 }

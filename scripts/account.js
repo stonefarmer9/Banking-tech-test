@@ -1,3 +1,5 @@
+const Transaction = require('./transaction.js')
+
 class Account {
 	constructor () {
 		this.balance = 0;
@@ -7,14 +9,17 @@ class Account {
 	deposit(amount) {
 		this.balance += amount;
 		const date = this._getDate();
-		this.log.push( ["deposit", amount, date, this.balance] );
+		this.log.push(new Transaction(date, "credit", amount, this.balance));
 	}
 
 	withdraw(amount){
 		this.balance -= amount;
 		const date = this._getDate();
-		this.log.push( ["withdrawal", amount, date, this.balance])
+		this.log.push(new Transaction(date, "debit", amount,this.balance))
 
+	}
+
+	statement() {
 	}
 
 _getDate() {

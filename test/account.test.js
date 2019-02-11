@@ -1,4 +1,4 @@
-const Account = require("../scripts/main.js");
+const Account = require("../scripts/account.js");
 
 
 describe("Account", () => {
@@ -23,21 +23,19 @@ describe("Account", () => {
 
 	test('#Deposit is logged with a time in the account log', () => {
 		myAccount.deposit(100);
-		expect(myAccount.log).toContainEqual(["deposit", 100, "11/02/2019", 100])
+		expect(myAccount.log).toEqual([{"amount": 100, "balanceAfter": 100, "date": "11/02/2019", "transactionType": "credit"}])
 	})
 
 	test('#Withdraw is logged with a time in the account log', () => {
 		myAccount.deposit(100);
+		myAccount.log = [];
 		myAccount.withdraw(50)
-		expect(myAccount.log).toContainEqual(["withdrawal", 50, "11/02/2019", 50])
+		expect(myAccount.log).toEqual( [{"amount": 50, "balanceAfter": 50, "date": "11/02/2019", "transactionType": "debit"}])
 	})
 
 	test('#statement shows your transactions', () => {
 		myAccount.deposit(1000);
-		myAccount.withdraw(50)
-		myAccount.deposit(100);
-		myAccount.withdraw(50)
-		expect(myAccount.statement()).toEqual('')
+		expect(myAccount.statement()).toBe('|date|credit|debit|balance|\n\n|11/02/2019|£1000|    |£1000')
 	})
 
 

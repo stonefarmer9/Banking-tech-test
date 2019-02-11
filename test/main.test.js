@@ -1,7 +1,12 @@
 const foo = require('../scripts/main.js')
 
-describe('foo', () => {
-  test('It returns bar', () => {
-    expect(foo()).toEqual('bar')
+beforeEach(() => {
+  const myAccount = new Account
+})
+
+describe('Account', ()=> {
+  test('#Deposit increases the account balance', ()=>{
+    myAccount.deposit(100)
+    expect(myAccount.balance).toBe(100)
   })
 })

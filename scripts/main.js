@@ -6,7 +6,7 @@ class Account {
 
 	deposit(amount) {
 		this.balance += amount;
-		this.log.push( ["deposit", amount] )
+		this.log.push( ["deposit", amount] );
 	}
 
 	withdraw(amount){

@@ -15,8 +15,8 @@ describe("Account", () => {
 		expect(myAccount.balance).toBe(50);
 	});
 
-	test('#Deposit amount is recorded in the account log', () =>{
-		myAccount.deposit(100)
-		expect(myAccount.log).toContainEqual(["deposit", 100])
-	})
+	test("#Deposit amount is recorded in the account log", () =>{
+		myAccount.deposit(100);
+		expect(myAccount.log).toContainEqual(["deposit", 100]);
+	});
 });

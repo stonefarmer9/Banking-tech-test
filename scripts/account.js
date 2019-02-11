@@ -1,4 +1,4 @@
-const Transaction = require('./transaction.js')
+const Transaction = require("./transaction.js");
 
 class Account {
 	constructor () {
@@ -15,37 +15,36 @@ class Account {
 	withdraw(amount){
 		this.balance -= amount;
 		const date = this._getDate();
-		this.log.push(new Transaction(date, "debit", amount,this.balance))
+		this.log.push(new Transaction(date, "debit", amount,this.balance));
 
 	}
 
 	statement(){
-		console.log(this.log)
-		var statement = '|date|credit|debit|balance|\n'
+		var statement = "|date|credit|debit|balance|\n";
 		this.log.forEach(function(transaction){
-			console.log(transaction.transactionType)
 			if (transaction.transactionType == "credit"){
-			statement = statement + `|${transaction.date}|£${transaction.amount}|     |£${transaction.balanceAfter}|\n`
-		} else {
-			statement = statement + `|${transaction.date}|     |£${transaction.amount}|£${transaction.balanceAfter}|\n`
+				statement = statement + `|${transaction.date}|£${transaction.amount}|     |£${transaction.balanceAfter}|\n`;
+			} else {
+				statement = statement + `|${transaction.date}|     |£${transaction.amount}|£${transaction.balanceAfter}|\n`;
 			}
-		})
-		return statement
+		});
+		return statement;
 	}
 
-_getDate() {
-	var date = new Date
-	var day = date.getDate();
-	var month = date.getMonth();
-	var year = date.getFullYear();
-	if (day < 10) {
-		day = '0' + day
+	_getDate() {
+		var date = new Date;
+		var day = date.getDate();
+		var month = date.getMonth();
+		var year = date.getFullYear();
+		if (day < 10) {
+			day = "0" + day;
+		}
+		if (month < 10) {
+			month = "0" + (month + 1);
+		}
+		return `${day}/${month}/${year}`;
 	}
-	if (month < 10) {
-		month = '0' + (month + 1)
-	}
-	return `${day}/${month}/${year}`
-}
+
 
 }
 

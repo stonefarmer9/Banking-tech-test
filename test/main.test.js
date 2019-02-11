@@ -14,4 +14,9 @@ describe("Account", () => {
 		myAccount.withdraw(50);
 		expect(myAccount.balance).toBe(50);
 	});
+
+	test('#Deposit amount is recorded in the account log', () =>{
+		myAccount.deposit(100)
+		expect(myAccount.statement()).toEq('| credit | debit | balance \n | £100 |        | £100  |')
+	})
 });

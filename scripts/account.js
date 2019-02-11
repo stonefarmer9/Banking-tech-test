@@ -19,7 +19,18 @@ class Account {
 
 	}
 
-	statement() {
+	statement(){
+		console.log(this.log)
+		var statement = '|date|credit|debit|balance|\n'
+		this.log.forEach(function(transaction){
+			console.log(transaction.transactionType)
+			if (transaction.transactionType == "credit"){
+			statement = statement + `|${transaction.date}|£${transaction.amount}|     |£${transaction.balanceAfter}|\n`
+		} else {
+			statement = statement + `|${transaction.date}|     |£${transaction.amount}|£${transaction.balanceAfter}|\n`
+			}
+		})
+		return statement
 	}
 
 _getDate() {

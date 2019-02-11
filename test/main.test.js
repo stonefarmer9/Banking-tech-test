@@ -19,22 +19,12 @@ describe("Account", () => {
 		expect(myAccount.balance).toBe(50);
 	});
 
-	test("#Deposit amount is recorded in the account log", () =>{
-		myAccount.deposit(100);
-		expect(myAccount.log).toContainEqual(["deposit", 100, "11/02/2019"]);
-	});
-
-	test('#Withdraw amount is recorded in the account log', () => {
-		myAccount.withdraw(50)
-		expect(myAccount.log).toContainEqual(["withdrawal", 50, "11/02/2019"])
-	});
-
-	test('#Deposit is logged with a time', () => {
+	test('#Deposit is logged with a time in the account log', () => {
 		myAccount.deposit(100);
 		expect(myAccount.log).toContainEqual(["deposit", 100, "11/02/2019"])
 	})
 
-	test('#Withdraw is logged with a time', () => {
+	test('#Withdraw is logged with a time in the account log', () => {
 		myAccount.deposit(100);
 		myAccount.withdraw(50)
 		expect(myAccount.log).toContainEqual(["withdrawal", 50, "11/02/2019"])

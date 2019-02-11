@@ -7,13 +7,13 @@ class Account {
 	deposit(amount) {
 		this.balance += amount;
 		const date = this._getDate();
-		this.log.push( ["deposit", amount, date ] );
+		this.log.push( ["deposit", amount, date, this.balance] );
 	}
 
 	withdraw(amount){
 		this.balance -= amount;
 		const date = this._getDate();
-		this.log.push( ["withdrawal", amount, date])
+		this.log.push( ["withdrawal", amount, date, this.balance])
 
 	}
 

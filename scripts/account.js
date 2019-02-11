@@ -1,4 +1,5 @@
 const Transaction = require("./transaction.js");
+const Statement = require("./statement.js")
 
 class Account {
 	constructor () {
@@ -20,15 +21,8 @@ class Account {
 	}
 
 	statement(){
-		var statement = "|date|credit|debit|balance|\n";
-		this.log.forEach(function(transaction){
-			if (transaction.transactionType == "credit"){
-				statement = statement + `|${transaction.date}|£${transaction.amount}|     |£${transaction.balanceAfter}|\n`;
-			} else {
-				statement = statement + `|${transaction.date}|     |£${transaction.amount}|£${transaction.balanceAfter}|\n`;
-			}
-		});
-		return statement;
+		var statement = new Statement(this.log)
+		return statement.createStatement()
 	}
 
 	_getDate() {

@@ -19,4 +19,9 @@ describe("Account", () => {
 		myAccount.deposit(100);
 		expect(myAccount.log).toContainEqual(["deposit", 100]);
 	});
+
+	test('#Withdraw amount is recorded in the account log', () => {
+		myAccount.withdraw(50)
+		expect(myAccount.log).toContainEqual(["withdrawal", 50])
+	})
 });

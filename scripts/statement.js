@@ -1,4 +1,4 @@
-class Statement {
+ class Statement {
   constructor (log) {
     this.statementLog = log;
   }
@@ -15,5 +15,8 @@ class Statement {
 )
 return statement
 }
+
+
+
 }
 module.exports = Statement

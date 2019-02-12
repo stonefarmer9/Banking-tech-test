@@ -1,5 +1,5 @@
 const Account = require("../scripts/account.js");
-
+var MockDate = require("mockdate");
 
 describe("Account", () => {
 
@@ -8,7 +8,12 @@ describe("Account", () => {
 	beforeEach(() => {
 		myAccount.log = [];
 		myAccount.balance = 0;
+		MockDate.set("02/12/2019");
 	});
+	afterEach(() => {
+		MockDate.reset;
+	});
+
 
 	test("#Deposit increases the account balance", () => {
 		myAccount.deposit(100);

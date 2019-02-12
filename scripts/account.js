@@ -1,6 +1,6 @@
 const Transaction = require("./transaction.js");
-const Statement = require("./statement.js")
-const TransactionDate = require('../scripts/transactiondate.js')
+const Statement = require("./statement.js");
+const TransactionDate = require("../scripts/transactiondate.js");
 
 class Account {
 	constructor () {
@@ -22,8 +22,8 @@ class Account {
 	}
 
 	statement(){
-		var statement = new Statement(this.log)
-		return statement.createStatement()
+		var statement = new Statement(this.log);
+		return statement.createStatement();
 	}
 
 

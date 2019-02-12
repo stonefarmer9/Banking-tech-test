@@ -34,7 +34,7 @@ A small app designed to be controlled via a REPL for the depositing and withdraw
 
 I approached this from as much of as TDD perspective as possible, starting with a failing feature test - deposit increases your balance - and working up through the subsequent tests as shown in the commit history. I was determined to take my time, having two full days to complete this project. I implemented all functionality on day 1 and spent day 2 refactoring and tidying up the code to be more presentable. I have aimed to keep a high test coverage throughout, not dropping below 90% at any time through the program.
 
-## Code structure reasoning
+## Code structure
 
 At current there are 4 classes, Account which handles the controlling of new transactions and statements. Transaction which creates a transaction object with inherent self-knowledge that allows the program to control where the appropriate transaction should go in the statement. A transactionDate class which handles providing the formatted date to the Account class so it can be used to store a date object in the needed format. Finally I have a statement class which handles the construction and formatting of the statement functionality.
 

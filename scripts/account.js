@@ -1,5 +1,6 @@
 const Transaction = require("./transaction.js");
 const Statement = require("./statement.js")
+const TransactionDate = require('../scripts/transactiondate.js')
 
 class Account {
 	constructor () {
@@ -9,13 +10,13 @@ class Account {
 
 	deposit(amount) {
 		this.balance += amount;
-		const date = this._getDate();
+		const date = new TransactionDate().getTransactionDate();
 		this.log.push(new Transaction(date, "credit", amount, this.balance));
 	}
 
 	withdraw(amount){
 		this.balance -= amount;
-		const date = this._getDate();
+		const date = new TransactionDate().getTransactionDate();
 		this.log.push(new Transaction(date, "debit", amount,this.balance));
 
 	}
@@ -23,20 +24,6 @@ class Account {
 	statement(){
 		var statement = new Statement(this.log)
 		return statement.createStatement()
-	}
-
-	_getDate() {
-		var date = new Date;
-		var day = date.getDate();
-		var month = date.getMonth();
-		var year = date.getFullYear();
-		if (day < 10) {
-			day = "0" + day;
-		}
-		if (month < 10) {
-			month = "0" + (month + 1);
-		}
-		return `${day}/${month}/${year}`;
 	}
 
 

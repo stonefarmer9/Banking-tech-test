@@ -13,7 +13,6 @@
     }
   }
 )
-console.log(statement)
 return statement
 }
 

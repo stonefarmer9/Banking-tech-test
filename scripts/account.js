@@ -22,7 +22,7 @@ class Account {
 	}
 
 
-	statement(){
+	showStatement(){
 		var statement = new Statement(this.log);
 		return statement.createStatement();
 	}

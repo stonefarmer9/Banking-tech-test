@@ -7,10 +7,10 @@ class TransactionDate {
 	formatTransactionDate(){
 		var date = this.today;
 		var day = date.getDate();
-		var month = date.getMonth();
+		var month = date.getMonth() + 1;
 		var year = date.getFullYear();
-		this._formatDay(day);
-		this._formatMonth(month);
+		day = this._formatDay(day);
+		month = this._formatMonth(month);
 		return `${day}/${month}/${year}`;
 	}
 

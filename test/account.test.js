@@ -38,7 +38,7 @@ describe("Account", () => {
 		expect(myAccount.log).toEqual( [{"amount": 50, "balanceAfter": 50, "date": "12/02/2019", "transactionType": "debit"}]);
 	});
 
-	test("#statement shows your transactions", () => {
+	test("#statement shows your transactions in an easily read format", () => {
 		myAccount.deposit(1000);
 
 		expect(myAccount.showStatement()).toMatch("|date|credit|debit|balance|\n|12/02/2019|£1000|     |£1000|");

@@ -1,17 +1,16 @@
 class TransactionDate {
 	constructor(){
 		this.today = new Date;
+    this.day = this.today.getDate();
+    this.month = this.today.getMonth() + 1;
+    this.year = this.today.getFullYear();
 	}
 
 
 	formatTransactionDate(){
-		var date = this.today;
-		var day = date.getDate();
-		var month = date.getMonth() + 1;
-		var year = date.getFullYear();
-		day = this._formatDay(day);
-		month = this._formatMonth(month);
-		return `${day}/${month}/${year}`;
+		var day = this._formatDay(this.day);
+		var month = this._formatMonth(this.month);
+		return `${day}/${month}/${this.year}`;
 	}
 
 	_formatDay(day){

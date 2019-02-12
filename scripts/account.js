@@ -24,7 +24,7 @@ class Account {
 
 	showStatement(){
 		var statement = new Statement(this.log);
-		console.log(statement.createStatement());
+		return (statement.createStatement());
 	}
 
 

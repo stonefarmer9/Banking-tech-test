@@ -3,7 +3,7 @@ class TransactionDate {
 		this.today = new Date;
 	}
 
-	getTransactionDate(){
+	formatTransactionDate(){
 		var date = this.today;
 		var day = date.getDate();
 		var month = date.getMonth();

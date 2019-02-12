@@ -10,18 +10,18 @@ class Account {
 
 	deposit(amount) {
 		this.balance += amount;
-		const date = new TransactionDate().getTransactionDate();
+		const date = new TransactionDate().formatTransactionDate();
 		this.log.push(new Transaction(date, "credit", amount, this.balance));
 	}
 
 	withdraw(amount){
 		this.balance -= amount;
-		const date = new TransactionDate().getTransactionDate();
+		const date = new TransactionDate().formatTransactionDate();
 		this.log.push(new Transaction(date, "debit", amount,this.balance));
 
 	}
 
-	statement(){
+	showStatement(){
 		var statement = new Statement(this.log);
 		return statement.createStatement();
 	}

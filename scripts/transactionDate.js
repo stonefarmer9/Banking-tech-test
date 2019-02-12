@@ -8,14 +8,17 @@ class TransactionDate {
     var day = date.getDate();
     var month = date.getMonth();
     var year = date.getFullYear();
-    if (day < 10) {
-      day = "0" + day;
-    }
-    if (month < 10) {
-      month = "0" + (month + 1);
-    }
+    this._formatDay(day)
+    this._formatMonth(month)
     return `${day}/${month}/${year}`;
+  }
 
+  _formatDay(day){
+      (day < 10) ? day = ("0" + day) : (day)
+  }
+
+  _formatMonth(month) {
+      (month < 10) ? month = ("0" + month) : (month)
   }
 }
 

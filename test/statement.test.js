@@ -1,6 +1,7 @@
 const Statement = require("../scripts/statement.js");
 
 describe("Statement", () => {
+
 	test("#createStatement returns a statement showing the deposit", () => {
 		let log = [{
 			"amount": 1000,
@@ -18,6 +19,7 @@ describe("Statement", () => {
 			"transactionType": "debit"}];
 		const statement = new Statement(log);
 		expect(statement.createStatement()).toMatch("|date|credit|debit|balance|\n|12/02/2019|     |£1000|£1000|");
+
 	});
 
 });

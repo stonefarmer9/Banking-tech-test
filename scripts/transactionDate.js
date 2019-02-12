@@ -3,13 +3,14 @@ class TransactionDate {
 		this.today = new Date;
 	}
 
-	getTransactionDate(){
+
+	formatTransactionDate(){
 		var date = this.today;
 		var day = date.getDate();
-		var month = date.getMonth() + 1;
+		var month = date.getMonth();
 		var year = date.getFullYear();
-		day = this._formatDay(day);
-		month = this._formatMonth(month);
+		this._formatDay(day);
+		this._formatMonth(month);
 		return `${day}/${month}/${year}`;
 	}
 
@@ -21,7 +22,7 @@ class TransactionDate {
 	_formatMonth(month) {
 		month = (month < 10) ? month = ("0" + month) : (month);
 		return month;
-	}
+  }
 }
 
 module.exports = TransactionDate;

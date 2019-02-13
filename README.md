@@ -85,7 +85,11 @@ Responsibilities:
 
 Functions:
 - Constructor - initialises with the statementLog equal to the transaction log from the Account class.
-- createStatement - takes the log from constructor and translates it from a series of objects to a nicely formatted bank statement.
+- createStatement - takes the log from constructor and translates it from a series of objects to a nicely formatted bank statement using 3 private methods to control what goes where.
+- Three private methods :
+    - _creditStatement_ which creates the credit strings to add to the statement.
+    - _debitStatement_ which creates the debit strings to add to the statement.
+    - _build_ which controls flow of iteration over the statement log, calls the credit/debit statement functions and then returns a complete string to the createStatement function.
 
 ### App running on node
 ![picture](/images/Pic1.png)

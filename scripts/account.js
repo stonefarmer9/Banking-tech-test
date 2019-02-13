@@ -26,8 +26,6 @@ class Account {
 		var statement = new Statement(this.log);
 		return (statement.createStatement());
 	}
-
-
 }
 
 module.exports = Account;

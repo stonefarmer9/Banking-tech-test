@@ -1,7 +1,7 @@
  class Statement {
   constructor (log) {
     this.statementLog = log;
-    this.statement = "|date|credit|debit|balance|\n";
+    this.statement = "||date||credit||debit||balance||\n";
   }
 
   createStatement() {
@@ -10,14 +10,14 @@
     return statement
 }
   static _creditStatement(statement, transaction){
-    statement = statement + `|${transaction.date}|` +
-    `£${transaction.amount}|     |£${transaction.balanceAfter}|\n`;
+    statement = statement + `||${transaction.date}||` +
+    `£${transaction.amount}||     ||£${transaction.balanceAfter}||\n`;
     return statement
   }
 
   static _debitStatement(statement, transaction){
-    statement = statement + `|${transaction.date}|` +
-    `     |£${transaction.amount}|£${transaction.balanceAfter}|\n`;
+    statement = statement + `||${transaction.date}||` +
+    `     ||£${transaction.amount}||£${transaction.balanceAfter}||\n`;
     return statement
   }
 

@@ -9,7 +9,7 @@ describe("Statement", () => {
 			"date": "12/02/2019",
 			"transactionType": "credit"}];
 		const statement = new Statement(log);
-		expect(statement.createStatement()).toMatch("|date|credit|debit|balance|\n|12/02/2019|£1000|     |£1000|");
+		expect(statement.createStatement()).toMatch("||date||credit||debit||balance||\n||12/02/2019||£1000||     ||£1000||");
 	});
 	test("#createStatement returns a statement showing the withdrawal", () => {
 		let log = [{
@@ -18,7 +18,7 @@ describe("Statement", () => {
 			"date": "12/02/2019",
 			"transactionType": "debit"}];
 		const statement = new Statement(log);
-		expect(statement.createStatement()).toMatch("|date|credit|debit|balance|\n|12/02/2019|     |£1000|£1000|");
+		expect(statement.createStatement()).toMatch("||date||credit||debit||balance||\n||12/02/2019||     ||£1000||£1000||");
 
 	});
 

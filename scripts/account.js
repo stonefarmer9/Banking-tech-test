@@ -20,10 +20,9 @@ class Account {
 		this.log.push(new Transaction(date, "debit", amount,this.balance));
 
 	}
-
-
-	showStatement(){
-		var statement = new Statement(this.log);
+	
+	showStatement(statement = new Statement(this.log)){
+		var statement = statement;
 		return (statement.createStatement());
 	}
 }

@@ -1,26 +1,25 @@
 const Transaction = require("./transaction.js");
 const Statement = require("./statement.js");
-const TransactionDate = require("../scripts/transactiondate.js");
 
 class Account {
 	constructor () {
-		this.balance = 0;
+		this.balance = 0.00;
 		this.log = [];
 	}
 
-	deposit(amount) {
+	deposit(amount, date = new Date) {
 		this.balance += amount;
-		const date = new TransactionDate().formatTransactionDate();
+		date = date.toLocaleDateString('en-GB')
 		this.log.push(new Transaction(date, "credit", amount, this.balance));
 	}
 
-	withdraw(amount){
+	withdraw(amount, date = new Date){
 		this.balance -= amount;
-		const date = new TransactionDate().formatTransactionDate();
+		date = date.toLocaleDateString('en-GB');
 		this.log.push(new Transaction(date, "debit", amount,this.balance));
 
 	}
-	
+
 	showStatement(statement = new Statement(this.log)){
 		var statement = statement;
 		return (statement.createStatement());

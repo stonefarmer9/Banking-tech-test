@@ -91,5 +91,19 @@ Functions:
     - _debitStatement_ which creates the debit strings to add to the statement.
     - _build_ which controls flow of iteration over the statement log, calls the credit/debit statement functions and then returns a complete string to the createStatement function.
 
+### Work to be done
+
+#### Production Code
+  - Initially I would extract the static methods from the statement class to a new class which controls the building of the statement, then refactor the existing statement class to initialise the builder class and call its methods to build the statement.
+  - I would like to extract the transaction log from Account to become its own class, thus passing the responsibility of remembering the different transactions, potentially having a credit log and a debit log to help manage to statement building later. This would depend on the final implementation of the transaction log class.
+  - I feel if the other refactors took place I may lean towards splitting transaction into debit-transaction and credit-transaction. Again I feel this would allow for better control of the data and the later statement building.
+  - Once the above three had been implemented I would look once more at the code base and make any further decisions.
+
+#### Test Code
+  - Statement.test needs to be refactored to make use of Jest's globals like beforeEach to tidy up the tests using larger log variables.
+  - While a majority of the methods in the Statement.test are private and tested via the tests of createStatement, a part of me would want to write some tests to cover these functions just in case. I am aware that this is a potential breach of convention in that private methods are not usually tested, but the sheer number of private functions here pushes me towards testing them over not testing them.
+
+
+
 ### App running on node
 ![picture](/images/Pic1.png)

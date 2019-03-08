@@ -7,17 +7,14 @@ class Account {
 		this.log = [];
 	}
 
-	deposit(amount, date = new Date) {
+	deposit(amount, transaction = Transaction) {
 		this.balance += amount;
-		date = date.toLocaleDateString('en-GB')
-		this.log.push(new Transaction(date, "credit", amount, this.balance));
+		this.log.push(new transaction("credit", amount, this.balance));
 	}
 
-	withdraw(amount, date = new Date){
+	withdraw(amount, transaction = Transaction) {
 		this.balance -= amount;
-		date = date.toLocaleDateString('en-GB');
-		this.log.push(new Transaction(date, "debit", amount,this.balance));
-
+		this.log.push(new transaction("debit", amount,this.balance));
 	}
 
 	showStatement(statement = new Statement(this.log)){

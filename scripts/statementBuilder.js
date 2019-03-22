@@ -5,13 +5,17 @@ class StatementBuilder {
 
   }
 
-  createCredit() {}
+  createCredit(transaction) {
+    const credit = `||${transaction.date}||` +
+    `£${transaction.amount}||     ||£${transaction.balanceAfter}||\n`
+    this.statement.push(credit)
+    console.log(this.statement);
+  }
 
   createDebit(transaction) {
   const debit = `||${transaction.date}||` +
     `     ||£${transaction.amount}||£${transaction.balanceAfter}||\n`;
     this.statement.push(debit)
-
   }
 
   build() {

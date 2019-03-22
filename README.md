@@ -107,3 +107,7 @@ Functions:
 
 ### App running on node
 ![picture](/images/Pic1.png)
+
+
+### Model of designed refactors 03/09/2019
+![picture](/images/Pic2.png)

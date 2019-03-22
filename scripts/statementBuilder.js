@@ -9,7 +9,7 @@ class StatementBuilder {
   createDebit() {}
 
   build() {
-    return"||date||credit||debit||balance||\n||12/02/2019||£1000||     ||£1000||\n||12/02/2019||     ||£1000||£1000||"
+    return `${this.header}||12/02/2019||£1000||     ||£1000||\n||12/02/2019||     ||£1000||£1000||`
   }
 
 }

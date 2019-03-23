@@ -36,7 +36,9 @@ describe('statementBuilder', ()=> {
     builder = new StatementBuilder(log)
   })
 
-  it('returns a completed bank statement', () => {
+  it('returns a completed bank statement', () => {  
+    builder.createDebit(debit)
+    builder.createCredit(credit)
     expect(builder.build()).toMatch("||date||credit||debit||balance||\n||12/02/2019||£1000||     ||£1000||\n||12/02/2019||     ||£1000||£1000||")
   })
 
@@ -54,5 +56,6 @@ describe('statementBuilder', ()=> {
       expect(builder.statement.length).toBe(2)
       expect(builder.statement[1]).toContain(["||12/02/2019||£1000||     ||£1000||"])
     })
+
   })
 })

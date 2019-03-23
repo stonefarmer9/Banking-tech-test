@@ -1,6 +1,5 @@
 class StatementBuilder {
-  constructor(log) {
-    this.log = log;
+  constructor() {
     this.statement =["||date||credit||debit||balance||\n"];
 
   }
@@ -19,7 +18,7 @@ class StatementBuilder {
   }
 
   build() {
-    return `${this.statement}||12/02/2019||£1000||     ||£1000||\n||12/02/2019||     ||£1000||£1000||`
+    return this.statement.join("")
   }
 
 }

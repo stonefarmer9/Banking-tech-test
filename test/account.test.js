@@ -48,8 +48,7 @@ describe("Account", () => {
 	});
 
 	test("#statement shows your transactions in an easily read format", () => {
-		myAccount.deposit(100);
-
+	
 		expect(myAccount.showStatement()).toMatch("||date||credit||debit||balance||\n||12/02/2019||£100||     ||£100||");
 	});
 

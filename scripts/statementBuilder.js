@@ -8,7 +8,6 @@ class StatementBuilder {
     const credit = `||${transaction.date}||` +
     `£${transaction.amount}||     ||£${transaction.balanceAfter}||\n`
     this.statement.splice(1, 0, credit)
-    console.log(this.statement);
   }
 
   createDebit(transaction) {

@@ -11,7 +11,6 @@ afterEach(() => {
 describe("#formatDate", () => {
   it('formats a date object as DD/MM/YYYY', () => {
     var date = new Date
-    console.log(date);
     expect(Transaction.formatDate(date)).toBe("09/03/2019")
   })
 })
